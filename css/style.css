@@ -1,0 +1,1539 @@
+@font-face {
+  font-family: Chakra Petch;
+  src: url(../fonts/ChakraPetch-Light.ttf);
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: Chakra Petch;
+  src: url(../fonts/ChakraPetch-Regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: Chakra Petch;
+  src: url(../fonts/ChakraPetch-Medium.ttf);
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: Chakra Petch;
+  src: url(../fonts/ChakraPetch-SemiBold.ttf);
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: Chakra Petch;
+  src: url(../fonts/ChakraPetch-Bold.ttf);
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: Days One;
+  src: url(../fonts/DaysOne-Regular.ttf);
+  font-weight: 700;
+}
+
+:root {
+  --main-color: #cbfe1c;
+  --mixed-with-main-color: #0ce073;
+  --main-btn-hover-color: #a4ce1a;
+  --main-text-color: #f1f1f1;
+  --secondary-text-color: #d1d5dc;
+  --tertiary-text-color: #99a1af;
+  --dark-color: #0b0e13;
+  --gray-color: #1a1a1a;
+  --light-gray-color: #364153;
+  --light-dark-color: #1e2939;
+  --main-fs: 1rem;
+  --xlg-fs: 3rem;
+  --lg-fs-5: 2.8125rem;
+  --lg-fs-2: 2.625rem;
+  --md-fs-4: 1.5rem;
+  --md-fs-1: 1.3125rem;
+  --md-fs-0: 1.25rem;
+  --sm-fs-9: 1.1875rem;
+  --sm-fs-8: 1.125rem;
+  --sm-fs-7: 1.0625rem;
+  --sm-fs-5: 0.9375rem;
+  --sm-fs-4: 0.875rem;
+  --sm-fs-3: 0.8125rem;
+  --sm-fs-2: 0.75rem;
+  --sm-fs-1: 0.6875rem;
+  --lh-tight: 1.2;
+  --lh-lessTight: 1.25;
+  --lh-lesserTight: 1.35;
+  --lh-mostLesserTight: 1.4;
+  --lh-lessestTight: 1.45;
+  --lh-normal: 1.5;
+}
+
+html::selection,
+body::selection {
+  background: var(--main-color);
+  color: var(--dark-color);
+}
+
+body {
+  font-family:
+    Chakra Petch,
+    sans-serif;
+  color: var(--main-text-color);
+  font-size: var(--main-fs);
+  line-height: var(--lh-normal);
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  border: none;
+  background: transparent;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Days One", sans-serif;
+}
+
+.container {
+  max-width: 1280px;
+  padding-inline: 1.5rem;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.title span {
+  color: var(--main-color);
+}
+
+.title .sub-title {
+  letter-spacing: 3px;
+}
+
+.title .sub-title::before,
+.title .sub-title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%);
+  width: 64px;
+  height: 2px;
+}
+
+.title .sub-title::after {
+  background: linear-gradient(to right, var(--main-color), var(--dark-color));
+  right: 0;
+  transform: translateX(120%);
+}
+
+.title .sub-title::before {
+  background: linear-gradient(to right, var(--dark-color), var(--main-color));
+  left: 0;
+  transform: translateX(-120%);
+}
+
+.what-we-do .title p,
+.title h2 {
+  font-size: var(--xlg-fs);
+  line-height: 1;
+}
+
+.my-btn {
+  --main-text-color: var(--dark-color);
+  background: var(--main-color);
+  min-width: 100px;
+  border: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.my-btn:hover {
+  --main-color: var(--dark-color);
+  color: var(--dark-color);
+  background: var(--main-btn-hover-color);
+}
+
+.my-nav {
+  background: var(--dark-color);
+  border-bottom: 1px solid var(--light-dark-color);
+}
+
+.my-nav .container {
+  padding: 1rem 1.5rem;
+}
+
+body:has(#null:target) .my-nav::after,
+body:has(:not(:target)) .my-nav::after {
+  opacity: 0;
+}
+
+#myNavbarSupportedContent {
+  display: flex;
+}
+
+#myNavbarSupportedContent:target {
+  max-height: 600px;
+}
+
+body:has(#myNavbarSupportedContent:target) .my-nav .container::after {
+  opacity: 1;
+}
+
+.my-nav .container::after {
+  content: "";
+  position: absolute;
+  background: var(--light-dark-color);
+  opacity: 0;
+  transition: opacity 0.3s;
+  width: 100%;
+  height: 1px;
+  top: 3.75rem;
+  left: 0;
+}
+
+.toggle-btn {
+  display: none;
+  cursor: pointer;
+}
+
+.toggle-btn a[href="#null"] {
+  z-index: -1;
+}
+
+.my-navbar-collapse {
+  transition: max-height 0.4s;
+}
+
+body:has(#myNavbarSupportedContent:target) .toggle-btn a[href="#null"],
+body:has(#myNavbarSupportedContent:target)
+  .toggle-btn
+  a[href="#myNavbarSupportedContent"] {
+  z-index: 1;
+}
+
+.my-nav .nav-brand {
+  font-size: var(--md-fs-0);
+  line-height: var(--lh-mostLesserTight);
+}
+
+.my-nav button,
+.my-nav a {
+  color: var(--main-text-color);
+  transition: color 0.3s;
+}
+
+.my-nav .btn-icon span,
+.my-nav a[href="#upcoming-tournaments"] {
+  display: none;
+}
+
+.my-nav button {
+  font-size: var(--sm-fs-8);
+}
+
+.glow::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0),
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0)
+  );
+  transition: transform 0.5s;
+}
+
+.glow:hover::after {
+  transform: translateX(350%);
+}
+
+.my-nav .nav-brand,
+.my-nav button:hover,
+.my-nav a:hover,
+body:not(:has(.my-nav a.nav-link.active[href]:not([href="#hero"])))
+  .my-nav
+  a[href="#hero"],
+.my-nav a.nav-link.active {
+  color: var(--main-color);
+}
+
+.hero {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.88), rgba(0, 0, 0, 0.88)),
+    url(../images/hero-bg.jpg);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  padding-block: 7.5rem 4rem;
+}
+
+.hero .container {
+  max-width: 1248px;
+}
+
+.hero .row > * {
+  padding-inline: 0;
+}
+
+h1 {
+  font-size: 3.75rem;
+  line-height: var(--lh-lessTight);
+}
+
+.hero__image .active-players i,
+.hero__btns .btn-watch,
+h1 span {
+  color: var(--main-color);
+}
+
+.hero p {
+  line-height: var(--lh-normal);
+  color: var(--secondary-text-color);
+}
+
+.hero__btns {
+  gap: 1rem;
+}
+
+.hero__btns button {
+  padding: 1rem 2rem;
+}
+
+.hero__btns .btn-watch:hover,
+.hero__btns .btn-start {
+  background: var(--main-color);
+  color: var(--dark-color);
+}
+
+.hero__btns .btn-start:hover {
+  background: var(--main-btn-hover-color);
+}
+
+.hero__btns .btn-watch {
+  background: transparent;
+  transition: background 0.3s;
+  border: 2px solid var(--main-color);
+}
+
+.hero__image {
+  height: 400px;
+  background: linear-gradient(
+    45deg,
+    var(--main-color),
+    var(--mixed-with-main-color)
+  );
+}
+
+.hero__image .active-players {
+  background: var(--dark-color);
+  border: 1px solid var(--light-gray-color);
+  top: 82%;
+  left: -4%;
+}
+
+.hero__image .active-players span:last-child,
+.hero__image .active-players i {
+  font-size: var(--md-fs-0);
+}
+
+.hero__image .active-players span:first-child {
+  font-size: var(--sm-fs-2);
+  line-height: var(--lh-lesserTight);
+  color: var(--tertiary-text-color);
+}
+
+.hero__image .active-players span:last-child {
+  line-height: var(--lh-mostLesserTight);
+}
+
+.latest-games {
+  background: var(--dark-color);
+  padding-block: 6rem 7.75rem;
+}
+
+.my-carousel .item {
+  width: calc(100% / 3 - 20px);
+  aspect-ratio: 4 / 3;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+}
+
+.my-carousel .item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: linear-gradient(#c9fe1c00 40%, var(--main-color));
+}
+
+.my-carousel .item:hover::after {
+  opacity: 1;
+}
+
+.my-carousel .item .tags {
+  transition: top 0.3s;
+  top: -30%;
+}
+
+.my-carousel .item:hover .tags {
+  top: 15px;
+}
+
+.my-carousel .item .tags span {
+  font-size: var(--sm-fs-2);
+  line-height: var(--lh-normal);
+  padding: 0.25rem 0.75rem;
+  background: #0b0e1385;
+}
+
+.my-carousel .btn-more,
+.my-carousel button:hover,
+.my-carousel .item .tags i {
+  color: var(--main-color);
+}
+
+.my-carousel .item h3,
+.my-carousel .btn-more,
+.my-carousel button {
+  font-size: var(--sm-fs-8);
+}
+
+.my-carousel .btn-more:hover,
+.my-carousel .item h3 {
+  color: var(--dark-color);
+}
+
+.my-carousel .btn-more,
+.my-carousel .item h3 {
+  line-height: var(--lh-normal);
+}
+
+.my-carousel .item h3 {
+  transition: bottom 0.3s;
+  bottom: -30%;
+}
+
+.my-carousel .item:hover h3 {
+  bottom: 10%;
+}
+
+.my-carousel .item .tags,
+.my-carousel .item h3 {
+  left: 5%;
+}
+
+.my-carousel .item img {
+  transition: transform 0.3s;
+}
+
+.my-carousel .item:hover img {
+  transform: scale(1.1);
+}
+
+.carousel-controlers {
+  top: 90%;
+}
+
+.my-carousel button {
+  border: 2px solid var(--light-gray-color);
+  height: 56px;
+  width: 56px;
+}
+
+.my-carousel .item:hover,
+.my-carousel .btn-more,
+.my-carousel button:hover {
+  border: 2px solid var(--main-color);
+}
+
+.my-carousel .next-btn {
+  margin-right: 0.625rem;
+}
+
+.my-carousel .btn-more {
+  left: 200px;
+  padding: 1rem 2rem;
+  transition:
+    color 0.3s,
+    background 0.3s;
+  width: fit-content;
+  height: fit-content;
+}
+
+.my-carousel .btn-more:hover {
+  background: var(--main-color);
+}
+
+.what-we-do {
+  background: var(--dark-color);
+  padding-block: 6rem 3rem;
+}
+
+.what-we-do .item {
+  padding: 0.75rem;
+}
+
+.what-we-do .inner-item {
+  aspect-ratio: 1 / 1;
+  border: 1px solid oklch(27.8% 0.033 256.848);
+  background: var(--gray-color);
+  transition: border 0.3s;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+}
+
+.what-we-do .inner-item:hover {
+  border: 1px solid var(--main-color);
+}
+
+.what-we-do .inner-item::before,
+.what-we-do .inner-item::after {
+  content: "";
+  position: absolute;
+  border: 12px solid;
+}
+
+.what-we-do .inner-item::after {
+  bottom: -10px;
+  right: -10px;
+  transition:
+    bottom 0.3s,
+    right 0.3s;
+  border-color: transparent var(--main-color) var(--main-color) transparent;
+}
+
+.what-we-do .inner-item::before {
+  top: -10px;
+  left: -10px;
+  transition:
+    top 0.3s,
+    left 0.3s;
+  border-color: var(--main-color) transparent transparent var(--main-color);
+}
+
+.what-we-do .inner-item:hover::before {
+  top: 15px;
+  left: 15px;
+}
+
+.what-we-do .inner-item:hover::after {
+  bottom: 15px;
+  right: 15px;
+}
+
+.what-we-do .inner-item span {
+  transition:
+    color 0.3s,
+    background 0.3s;
+  font-size: var(--md-fs-4);
+  color: var(--main-color);
+  width: 64px;
+  height: 64px;
+  background: var(--light-dark-color);
+}
+
+.what-we-do .inner-item:hover span {
+  color: var(--dark-color);
+  background: var(--main-color);
+}
+
+.what-we-do .inner-item h3 {
+  font-size: var(--md-fs-0);
+  line-height: var(--lh-lessTight);
+}
+
+.sponsors {
+  background: var(--dark-color);
+}
+
+.sponsors::after,
+.sponsors::before {
+  content: "";
+  position: absolute;
+}
+
+.sponsors::after {
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 2px;
+  width: 80%;
+  max-width: 600px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--main-color) 20%,
+    var(--main-color) 80%,
+    transparent
+  );
+  box-shadow:
+    0 0 10px var(--main-color),
+    0 0 20px #cbfe1c4d;
+}
+
+.sponsors::before {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  width: 1200px;
+  height: 340px;
+  background-image: radial-gradient(
+    ellipse at center,
+    var(--main-color) 0%,
+    #c9fe1c71 30%,
+    rgba(131, 204, 22, 0) 70%
+  );
+}
+
+.sponsors .sliders {
+  padding-inline: 1.5rem;
+}
+
+.sponsors .sliders::before,
+.sponsors .sliders::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 5%;
+}
+
+.sponsors .sliders::after {
+  left: 0;
+  background: linear-gradient(to right, #030c1db2, #0b0e1310);
+}
+
+.sponsors .sliders::before {
+  right: 0;
+  background: linear-gradient(to right, #0b0e1310, #030c1db2);
+}
+
+.sponsors img {
+  width: 96px;
+  height: 96px;
+}
+
+.sponsors .move-left {
+  transform: translateX(0);
+  animation: slid1 40s infinite linear;
+}
+
+.sponsors .move-right {
+  transform: translateX(-95%);
+  animation: slid2 40s infinite linear;
+}
+
+@keyframes slid1 {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-95%);
+  }
+}
+
+@keyframes slid2 {
+  from {
+    transform: translateX(-95%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.team-members {
+  background: var(--dark-color);
+  padding-block: 6rem;
+}
+
+.team-members h3,
+.team-members .title p {
+  font-size: var(--md-fs-0);
+}
+
+.team-members h3,
+.team-members .title p {
+  line-height: var(--lh-mostLesserTight);
+}
+
+.team-members .champion-date,
+.team-members .title p {
+  color: var(--tertiary-text-color);
+}
+
+.team-members .inner-item {
+  cursor: pointer;
+  height: 320px;
+  width: 100%;
+}
+
+.team-members .inner-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.027);
+  backdrop-filter: grayscale(100%);
+  transition: transform 0.8s;
+}
+
+.team-members .inner-item:hover:after {
+  transform: translateY(-100%);
+}
+
+.team-members img {
+  filter: brightness(80%);
+}
+
+.team-members .layout {
+  padding: 1.25rem;
+}
+
+.team-members h3 {
+  color: #fff;
+}
+
+.team-members .nickname,
+.team-members .game-name {
+  color: var(--main-color);
+}
+
+.team-members .game-name {
+  font-size: var(--sm-fs-4);
+  line-height: var(--lh-lessestTight);
+}
+
+.team-members .champion-date {
+  font-size: var(--sm-fs-2);
+  line-height: var(--lh-lesserTight);
+}
+
+.team-members .nickname {
+  font-size: var(--sm-fs-8);
+  line-height: var(--lh-normal);
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  align-self: end;
+}
+
+.contact {
+  background: linear-gradient(to right bottom, #101828, #0b0e13);
+  padding-block: 6rem;
+}
+
+.contact .card h3,
+.contact .title p {
+  font-size: var(--md-fs-0);
+  line-height: var(--lh-mostLesserTight);
+}
+
+.contact-form__info .bottom,
+.contact-form label[for="subscribe"],
+.contact .card p,
+.contact .title p {
+  color: var(--tertiary-text-color);
+}
+
+.contact-form,
+.contact .cards {
+  width: calc(100% / 2 - 24px);
+}
+
+.contact .cards {
+  gap: 2rem;
+}
+
+.contact-form,
+.contact .card {
+  border: none;
+  padding: 2rem;
+  background: var(--light-dark-color);
+}
+
+.contact-form__info .top,
+.contact .special-card h3,
+.contact .card span {
+  font-size: var(--md-fs-4);
+}
+
+.contact .card span {
+  width: 64px;
+  height: 64px;
+  background: var(--main-color);
+  color: var(--dark-color);
+}
+
+.contact-form select,
+.contact-form textarea,
+.contact-form input,
+.contact .card h3 {
+  color: var(--main-text-color);
+}
+
+.contact .special-card {
+  background: linear-gradient(
+    to right,
+    var(--main-color) 0%,
+    var(--mixed-with-main-color) 100%
+  );
+}
+
+.contact-form__info .top,
+.contact .special-card h3 {
+  line-height: var(--lh-mostLesserTight);
+}
+
+.contact .special-card h3,
+.contact .special-card p {
+  color: var(--dark-color);
+}
+
+.contact-form__info .top,
+.contact .special-card a {
+  color: var(--main-color);
+}
+
+.contact .special-card a {
+  width: 48px;
+  height: 48px;
+  background: var(--dark-color);
+  transition: background 0.3s;
+}
+
+.contact .special-card a:hover {
+  background: #0b0e13c7;
+}
+
+.contact-form__info .bottom,
+.contact-form label {
+  font-size: var(--sm-fs-4);
+  line-height: var(--lh-lessestTight);
+}
+
+.contact-form__username div {
+  width: calc(100% / 2 - 12px);
+}
+
+.contact-form select,
+.contact-form textarea,
+.contact-form input {
+  background: var(--light-gray-color);
+  padding: 0.75rem 1rem;
+  border: none;
+  font-weight: 600;
+  outline: 1px solid #4a5565;
+  transition: outline 0.3s;
+}
+
+.contact-form select:focus,
+.contact-form textarea:focus,
+.contact-form input[type="checkbox"]:focus,
+.contact-form input:focus {
+  outline: 2px solid var(--main-color);
+}
+
+.contact-form textarea {
+  resize: none;
+}
+
+.contact-form input[type="checkbox"] {
+  width: 20px;
+  margin-right: 0.75rem;
+  outline: none;
+}
+
+.contact-form label:not([for="subscribe"]) {
+  color: var(--secondary-text-color);
+}
+
+.contact-form button {
+  font-size: var(--sm-fs-8);
+  line-height: var(--lh-normal);
+}
+
+.contact-form__info {
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid oklch(0.373 0.034 259.733);
+}
+
+footer {
+  background: #000;
+  padding-block: 3.125rem 3rem;
+}
+
+footer .row {
+  row-gap: 2rem;
+}
+
+footer .row li {
+  margin-bottom: 0.75rem;
+}
+
+footer a:hover,
+footer .brand-name {
+  color: var(--main-color);
+}
+
+footer .brand-name {
+  font-family:
+    Chakra Petch,
+    sans-serif;
+}
+
+footer .brand-name i {
+  margin-right: 0.5rem;
+}
+
+footer h2,
+footer p {
+  margin-bottom: 1.5rem;
+}
+
+footer .main-column a,
+footer h2 {
+  font-size: var(--md-fs-0);
+}
+
+footer h2 {
+  line-height: var(--lh-normal);
+}
+
+footer p,
+footer a {
+  color: var(--tertiary-text-color);
+}
+
+footer a {
+  transition: color 0.3s;
+}
+
+footer .copy-right {
+  padding-top: 2rem;
+  border-top: 1px solid oklch(0.373 0.034 259.733);
+}
+
+@media screen and (max-width: 1200px) {
+  .contact-form,
+  .contact .cards {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .toggle-btn {
+    display: flex;
+  }
+
+  .what-we-do .title p,
+  .what-we-do .title h2 {
+    font-size: 2.25rem;
+  }
+
+  .my-navbar-collapse {
+    max-height: 0;
+    flex-direction: column;
+  }
+
+  .my-nav ul {
+    border-bottom: 1px solid var(--light-dark-color);
+    margin-block: 1rem;
+    padding-block: 1rem;
+    row-gap: 0.5rem;
+  }
+
+  .my-nav .btn-icon span,
+  .my-nav a[href="#upcoming-tournaments"] {
+    display: block;
+  }
+
+  .my-nav .btn-icon,
+  .my-nav .my-btn,
+  .my-nav__btns {
+    width: 100%;
+  }
+
+  .my-nav .btn-icon {
+    text-align: start;
+    margin-block: 0.75rem;
+    gap: 0.5rem;
+  }
+
+  .my-nav .btn-icon span {
+    font-size: var(--main-fs);
+  }
+
+  .my-nav .my-btn {
+    font-size: var(--sm-fs-5);
+    padding: 0.6875rem 1.375rem;
+  }
+
+  .hero {
+    padding-block: 10rem 3.75rem;
+  }
+
+  .hero .container {
+    max-width: 632px;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: var(--xlg-fs);
+  }
+
+  .hero .image-col {
+    padding-top: 3.125rem;
+  }
+
+  .my-carousel .item:nth-child(3) {
+    display: none;
+  }
+
+  .my-carousel .item {
+    width: calc(100% / 2 - 16px);
+  }
+
+  .team-members .layout {
+    padding: 1.125rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    margin-bottom: 2.8125rem;
+  }
+
+  .title .sub-title::before,
+  .title .sub-title::after {
+    width: 60px;
+  }
+
+  .title h2 {
+    font-size: 2.125rem;
+  }
+
+  .container {
+    padding-inline: 1.375rem;
+  }
+
+  .my-nav .container {
+    padding: 0.9375rem 1.375rem;
+  }
+
+  .my-nav .container::after {
+    top: 3.5rem;
+  }
+
+  .my-nav ul {
+    row-gap: 1.5rem;
+  }
+
+  .contact .card h3,
+  .team-members h3,
+  footer h2,
+  .contact .title p,
+  .team-members .title p,
+  .my-nav .nav-brand {
+    font-size: var(--sm-fs-9);
+  }
+
+  .hero {
+    background-position: top;
+    background-size: 250%;
+    padding-block: 7rem 3.75rem;
+  }
+
+  .hero .container {
+    max-width: 589px;
+  }
+
+  .hero .my-row {
+    padding-block: 2.375rem;
+  }
+
+  .team-members .title h2,
+  .hero h1 {
+    font-size: var(--lg-fs-5);
+  }
+
+  .hero h1 {
+    width: 100%;
+    margin-bottom: 0.9375rem;
+  }
+
+  footer a,
+  footer p,
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form input,
+  .contact .card p,
+  .my-carousel .btn-more,
+  .contact .title .sub-title,
+  .team-members .title .sub-title,
+  .hero button,
+  .hero p {
+    font-size: var(--sm-fs-5);
+  }
+
+  .hero__btns {
+    gap: 0.75rem;
+  }
+
+  .my-carousel .btn-more,
+  .hero__btns button {
+    padding: 0.9375rem 1.875rem;
+  }
+
+  .hero .image-col {
+    padding-top: 1.75rem;
+  }
+
+  .hero__image {
+    height: 300px;
+  }
+
+  .hero__image .active-players {
+    padding: 1.375rem;
+  }
+
+  .contact-form__info .bottom,
+  .contact-form label,
+  .team-members .game-name,
+  .latest-games .title .sub-title,
+  .what-we-do .title .sub-title {
+    font-size: var(--sm-fs-3);
+  }
+
+  .what-we-do,
+  .latest-games {
+    padding-top: 3.75rem;
+  }
+
+  .latest-games {
+    padding-bottom: 7.5rem;
+  }
+
+  .my-carousel .item:nth-child(2) {
+    display: none;
+  }
+
+  .my-carousel .item {
+    width: 100%;
+  }
+
+  .team-members .champion-date,
+  .my-carousel .item .tags span {
+    font-size: var(--sm-fs-1);
+  }
+
+  .my-carousel .item .tags span {
+    /* line-height: var(--sm-lh-4); */
+    padding: 0.1875rem 0.6875rem;
+  }
+
+  .contact-form button,
+  .team-members .nickname,
+  .what-we-do .inner-item h3,
+  .my-carousel .item h3 {
+    font-size: var(--sm-fs-7);
+  }
+
+  .carousel-controlers {
+    top: 100%;
+  }
+
+  .what-we-do {
+    padding-bottom: 2.8125rem;
+  }
+
+  .what-we-do .title p,
+  .what-we-do .title h2 {
+    font-size: 1.75rem;
+  }
+
+  footer .row .main-column a,
+  .what-we-do .inner-item span {
+    font-size: var(--sm-fs-8);
+  }
+
+  .what-we-do .inner-item span {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 0.75rem;
+  }
+
+  .contact,
+  .team-members {
+    padding-block: 5.625rem;
+  }
+
+  .team-members .inner-item {
+    height: 300px;
+  }
+
+  .team-members .layout {
+    padding: 1rem;
+  }
+
+  .contact .card span {
+    font-size: 1.375rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-form__info .top,
+  .contact .special-card h3 {
+    font-size: 1.4375rem;
+  }
+
+  .contact .title .sub-title,
+  .contact .special-card a {
+    font-size: var(--sm-fs-4);
+  }
+
+  .contact .special-card a {
+    width: 45px;
+    height: 45px;
+  }
+
+  .contact-form,
+  .contact .card {
+    padding: 1.875rem;
+  }
+
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form input {
+    padding: 0.6875rem 0.9375rem;
+  }
+
+  .contact-form__username div {
+    width: 100%;
+  }
+
+  .contact-form input[type="checkbox"] {
+    width: 18px;
+    margin-right: 0.6875rem;
+  }
+
+  .contact-form button {
+    padding: 1.375rem 0.9375rem;
+  }
+
+  .contact-form__info {
+    padding-top: 1.875rem;
+    margin-top: 1.875rem;
+  }
+
+  footer .row {
+    row-gap: 1.875rem;
+  }
+
+  footer h2,
+  footer p {
+    margin-bottom: 1.375rem;
+  }
+
+  footer .brand-name i {
+    margin-right: 0.4375rem;
+  }
+
+  footer .row li {
+    margin-bottom: 0.6875rem;
+  }
+
+  footer .copy-right {
+    padding-top: 1.875rem;
+  }
+}
+
+@media screen and (max-width: 639px) {
+  .title .sub-title::before,
+  .title .sub-title::after {
+    width: 28px;
+  }
+
+  .contact .title h2 {
+    font-size: var(--lg-fs-2);
+  }
+
+  footer h2,
+  .contact .card h3,
+  .team-members h3,
+  .contact .title p {
+    font-size: var(--sm-fs-8);
+  }
+
+  .contact .special-card h3,
+  .what-we-do .title p,
+  .what-we-do .title h2 {
+    font-size: var(--md-fs-1);
+  }
+
+  .container {
+    padding-inline: 0.875rem;
+  }
+
+  .team-members .container,
+  .contact .container {
+    padding-inline: 1.3125rem;
+  }
+
+  .my-nav .container::after {
+    top: 3.375rem;
+  }
+
+  .my-nav .container {
+    padding: 0.875rem 1.3125rem;
+  }
+
+  footer a,
+  footer p,
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form input,
+  .contact .card p,
+  .my-nav .my-btn,
+  .my-nav .collapse button span,
+  .my-nav .collapse {
+    font-size: var(--sm-fs-4);
+  }
+
+  .my-carousel .prev-btn,
+  .my-carousel .next-btn,
+  .hero__image .active-players span:last-child,
+  .hero__image .active-players i,
+  .my-nav .collapse button i {
+    font-size: var(--sm-fs-5);
+  }
+
+  .my-nav .my-btn {
+    padding: 10px 21px;
+  }
+
+  .hero {
+    padding-block: 6.5625rem 3.5rem;
+  }
+
+  .hero .container {
+    max-width: 540px;
+  }
+
+  .hero .my-row {
+    padding-block: 1.5625rem;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .contact-form__info .bottom,
+  .contact-form label,
+  .my-carousel .btn-more,
+  .team-members .game-name,
+  .hero button,
+  .hero p {
+    font-size: var(--sm-fs-2);
+  }
+
+  .hero button {
+    padding: 0.625rem 1.3125rem;
+    width: 100%;
+  }
+
+  .hero__image {
+    height: 240px;
+  }
+
+  .hero__image .active-players {
+    padding: 0.875rem;
+  }
+
+  .hero__image .active-players span:first-child {
+    font-size: 0.625rem;
+  }
+
+  .what-we-do,
+  .latest-games {
+    padding-top: 3.5rem;
+  }
+
+  .latest-games {
+    padding-bottom: 10rem;
+  }
+
+  .my-carousel .next-btn {
+    margin-right: 0;
+  }
+
+  .my-carousel .prev-btn,
+  .my-carousel .next-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .my-carousel .btn-more {
+    width: 100%;
+    padding: 0.625rem 1.3125rem;
+  }
+
+  .what-we-do {
+    padding-bottom: 2rem;
+  }
+
+  .what-we-do .inner-item {
+    padding: 0.875rem;
+  }
+
+  footer .row .main-column a,
+  .what-we-do .inner-item span {
+    font-size: var(--sm-fs-7);
+  }
+
+  .what-we-do .inner-item span {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 0.625rem;
+  }
+
+  .contact-form button,
+  .team-members .nickname,
+  .what-we-do .inner-item h3 {
+    font-size: var(--main-fs);
+  }
+
+  .contact,
+  .team-members {
+    padding-block: 5.25rem;
+  }
+
+  .team-members .inner-item {
+    height: 280px;
+  }
+
+  .contact-form__info .top,
+  .contact .card span {
+    font-size: var(--md-fs-1);
+  }
+
+  .contact .card span {
+    width: 56px;
+    height: 56px;
+  }
+
+  .contact .special-card a {
+    width: 42px;
+    height: 42px;
+    font-size: var(--sm-fs-3);
+  }
+
+  .contact-form,
+  .contact .card {
+    padding: 1.75rem;
+  }
+
+  .contact-form select,
+  .contact-form textarea,
+  .contact-form input {
+    padding: 0.625rem 0.875rem;
+  }
+
+  .contact-form input[type="checkbox"] {
+    width: 17px;
+    margin-right: 0.625rem;
+  }
+
+  .contact-form button {
+    padding: 1.3125rem 0.875rem;
+  }
+
+  .contact-form__info {
+    padding-top: 1.75rem;
+    margin-top: 1.75rem;
+  }
+
+  footer .row {
+    row-gap: 1.75rem;
+  }
+
+  footer h2,
+  footer p {
+    margin-bottom: 1.3125rem;
+  }
+
+  footer .row li {
+    margin-bottom: 0.625rem;
+  }
+
+  footer .copy-right {
+    padding-top: 1.75rem;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title {
+    margin-bottom: 2.625rem;
+  }
+
+  .title .sub-title {
+    font-size: var(--sm-fs-2);
+  }
+
+  .title h2 {
+    font-size: 1.625rem;
+  }
+
+  .my-nav .container::after {
+    top: 3.3125rem;
+  }
+
+  .team-members .title p,
+  .my-nav .nav-brand {
+    font-size: var(--sm-fs-8);
+  }
+
+  .hero {
+    background-size: 320%;
+  }
+
+  .hero .image-col {
+    padding-top: 2.1875rem;
+  }
+
+  .my-carousel .item h3 {
+    font-size: var(--main-fs);
+  }
+
+  .my-carousel .carousel-item {
+    padding-inline: 0;
+  }
+
+  .team-members .title h2 {
+    font-size: var(--lg-fs-2);
+  }
+}
