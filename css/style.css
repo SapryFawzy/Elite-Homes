@@ -1300,13 +1300,8 @@ footer {
   }
 
   .my-dropdown-menu {
-<<<<<<< HEAD
     max-width: 1000px;
     transform: translateX(-43%);
-=======
-    width: 1000px;
-    transform: translateX(-50%);
->>>>>>> 3c48236c47805afdb7c95d83e6ef257793fbbb9a
   }
 
   .my-carousel {
@@ -1387,11 +1382,7 @@ footer {
     transform: translateX(0);
   }
 
-<<<<<<< HEAD
   .dropdown-menu .row:first-child {
-=======
-  .dropdown-menu .row {
->>>>>>> 3c48236c47805afdb7c95d83e6ef257793fbbb9a
     margin: 0;
   }
 
@@ -1457,10 +1448,6 @@ footer {
     padding: 12px;
   }
 
-  .dropdown-menu .resources .reports {
-    max-width: 50%;
-  }
-
   .hero {
     padding-block: 160px 80px;
   }
@@ -1490,10 +1477,6 @@ footer {
 
   .container {
     max-width: 640px;
-  }
-
-  .dropdown-menu .resources .reports {
-    max-width: 100%;
   }
 
   .testimonials .carousel-item {
