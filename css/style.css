@@ -1379,7 +1379,6 @@ footer {
   .my-dropdown-menu {
     max-height: calc(55dvh - 180px);
     transform: translateX(0);
-    overflow-y: auto;
   }
 
   .dropdown-menu .row:first-child {
