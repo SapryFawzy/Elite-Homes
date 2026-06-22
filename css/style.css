@@ -1300,8 +1300,13 @@ footer {
   }
 
   .my-dropdown-menu {
+<<<<<<< HEAD
     max-width: 1000px;
     transform: translateX(-43%);
+=======
+    width: 1000px;
+    transform: translateX(-50%);
+>>>>>>> 3c48236c47805afdb7c95d83e6ef257793fbbb9a
   }
 
   .my-carousel {
@@ -1382,7 +1387,11 @@ footer {
     transform: translateX(0);
   }
 
+<<<<<<< HEAD
   .dropdown-menu .row:first-child {
+=======
+  .dropdown-menu .row {
+>>>>>>> 3c48236c47805afdb7c95d83e6ef257793fbbb9a
     margin: 0;
   }
 
