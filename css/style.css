@@ -260,10 +260,6 @@ nav .navbar-brand {
   padding: 0;
 }
 
-.my-dropdown-menu {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-}
-
 .dropdown-menu .resources h3,
 .dropdown-menu .property-types a span,
 .navbar-toggler,
@@ -282,12 +278,13 @@ nav .navbar-brand {
   font-weight: 600;
 }
 
-.dropdown-menu {
+.my-dropdown-menu {
   width: 1200px;
   max-height: calc(100dvh - 80px);
   transform: translateX(-53%);
   overflow-y: auto;
   overflow-x: hidden;
+  box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
 }
 
 .dropdown-menu .resources .guide:hover h3,
@@ -359,6 +356,7 @@ nav.navbar button.dropdown-toggle.show,
   height: 64px;
 }
 
+.dropdown-menu .item-summary,
 .dropdown-menu .resources a,
 .dropdown-menu .popular-locations span,
 .dropdown-menu .featured-properties p,
@@ -367,7 +365,7 @@ nav.navbar button.dropdown-toggle.show,
   line-height: var(--lh-mostLesserTight);
 }
 
-.dropdown-menu .featured-properties p {
+.dropdown-menu .item-summary {
   color: var(--gray-500);
 }
 
@@ -1301,9 +1299,9 @@ footer {
     max-width: 1024px;
   }
 
-  .dropdown-menu {
-    width: 1000px;
-    transform: translateX(-50%);
+  .my-dropdown-menu {
+    max-width: 1000px;
+    transform: translateX(-43%);
   }
 
   .my-carousel {
@@ -1329,7 +1327,7 @@ footer {
     max-width: 768px;
   }
 
-  .dropdown-menu,
+  .my-dropdown-menu,
   .hero p,
   .my-navbar-collapse {
     width: 100%;
@@ -1379,9 +1377,13 @@ footer {
     right: 16px;
   }
 
-  .dropdown-menu {
+  .my-dropdown-menu {
     max-height: calc(55dvh - 180px);
     transform: translateX(0);
+  }
+
+  .dropdown-menu .row:first-child {
+    margin: 0;
   }
 
   .dropdown-menu .featured-properties .item {
@@ -1395,6 +1397,7 @@ footer {
     height: 48px;
   }
 
+  .dropdown-menu .item-summary,
   .dropdown-menu .popular-locations .cities span,
   .dropdown-menu .resources .item p,
   .dropdown-menu .featured-properties p,
@@ -1498,7 +1501,7 @@ footer {
 }
 
 @media screen and (max-width: 639px) {
-  .dropdown-menu {
+  .my-dropdown-menu {
     max-height: calc(89dvh - 180px);
   }
 }
