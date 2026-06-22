@@ -282,7 +282,6 @@ nav .navbar-brand {
   width: 1200px;
   max-height: calc(100dvh - 80px);
   transform: translateX(-53%);
-  overflow-y: auto;
   overflow-x: hidden;
   box-shadow: 0 20px 25px -5px #0000001a, 0 8px 10px -6px #0000001a;
 }
@@ -1380,6 +1379,7 @@ footer {
   .my-dropdown-menu {
     max-height: calc(55dvh - 180px);
     transform: translateX(0);
+    overflow-y: auto;
   }
 
   .dropdown-menu .row:first-child {
